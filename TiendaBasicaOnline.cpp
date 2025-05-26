@@ -28,3 +28,18 @@ private:
     double montoTotal;
 };
 
+// --- Clase Cliente ---
+// Define los datos de un cliente.
+class Cliente {
+private:
+    string nombre;
+    string idCliente; // Se usa string por flexibilidad.
+    vector<Pedido> historialCompras; // Lista de pedidos anteriores.
+};
+
+// --- Clase Carrito ---
+// Define los datos del carrito de compras.
+class Carrito {
+private:
+    vector<Producto> productosAnadidos; // Productos que el cliente ha agregado.
+};
