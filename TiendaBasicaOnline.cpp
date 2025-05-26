@@ -15,7 +15,7 @@ class Pedido;
 class Producto {
 private:
     string nombre;
-    double precio;
+    float precio;
     string codigo;
     int stock;
 };
@@ -25,7 +25,7 @@ private:
 class Pedido {
 private:
     vector<Producto> productosComprados; // Un conjunto de productos.
-    double montoTotal;
+    float montoTotal;
 };
 
 // --- Clase Cliente ---
