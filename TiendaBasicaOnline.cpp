@@ -57,6 +57,19 @@ public:
     void setPeso(float peso) { this->peso = peso; }
 };
 
+class ProductoDigital : public Producto {
+private:
+    float tamanoArchivo; // en MB
+
+public:
+    ProductoDigital(string nombre, float precio, string codigo, int stock, float tamanoArchivo)
+        : Producto(nombre, precio, codigo, stock) {
+        this->tamanoArchivo = tamanoArchivo;
+    }
+
+    float getTamanoArchivo() { return tamanoArchivo; }
+    void setTamanoArchivo(float tamano) { this->tamanoArchivo = tamano; }
+};
 
 
 // --- Clase Pedido ---
@@ -155,4 +168,12 @@ public:
     // Setters
     void setProductosAnadidos(vector<Producto> productos) { this->productosAnadidos = productos; }
 };
+int main() {
+    ProductoFisico fisico("Libro de C++", 35.0, "F123", 10, 1.5);
+    ProductoDigital digital("Curso C++ Online", 20.0, "D456", 100, 500.0);
 
+    cout << "Producto Físico: " << fisico.getNombre() << ", Peso: " << fisico.getPeso() << " kg" << endl;
+    cout << "Producto Digital: " << digital.getNombre() << ", Tamaño archivo: " << digital.getTamanoArchivo() << " MB" << endl;
+
+    return 0;
+}
