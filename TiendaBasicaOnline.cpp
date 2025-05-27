@@ -39,7 +39,25 @@ public:
     void setPrecio(float precio) { this->precio = precio; }
     void setCodigo(string codigo) { this->codigo = codigo; }
     void setStock(int stock) { this->stock = stock; }
+     virtual ~Producto() {} // Destructor virtual para uso con herencia
+
 };
+
+class ProductoFisico : public Producto {
+private:
+    float peso; // en kilogramos
+
+public:
+    ProductoFisico(string nombre, float precio, string codigo, int stock, float peso)
+        : Producto(nombre, precio, codigo, stock) {
+        this->peso = peso;
+    }
+
+    float getPeso() { return peso; }
+    void setPeso(float peso) { this->peso = peso; }
+};
+
+
 
 // --- Clase Pedido ---
 // Define los datos de un pedido realizado.
@@ -137,3 +155,4 @@ public:
     // Setters
     void setProductosAnadidos(vector<Producto> productos) { this->productosAnadidos = productos; }
 };
+
