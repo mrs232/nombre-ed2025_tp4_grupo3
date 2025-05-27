@@ -54,6 +54,20 @@ public:
         this->productosComprados = productosComprados;
         this->montoTotal = montoTotal;
     }
+    //Mostrar resumen del pedido
+    void mostrarResumen() {
+        cout << "Resumen del Pedido:" << endl;
+      for(int i=0;i<productosComprados.size(); i++)
+        {
+            cout << "Producto: " << productosComprados[i].getNombre() << endl;
+            cout << "Precio: $" << productosComprados[i].getPrecio() << endl;
+            cout << "Codigo: " << productosComprados[i].getCodigo() << endl;
+            cout << "Stock: " << productosComprados[i].getStock() << endl;
+            cout << "------------------------" << endl;
+        }
+        cout << "Monto Total: $" << montoTotal << endl;
+    }
+
 
     // Getters
     vector<Producto> getProductosComprados() { return productosComprados; }
@@ -100,6 +114,21 @@ public:
     // Constructor
     Carrito(vector<Producto> productosAnadidos) {
         this->productosAnadidos = productosAnadidos;
+    }
+    //Agregar producto al carrito
+    void anadirProducto(Producto producto) 
+    {
+        productosAnadidos.push_back(producto);
+    }
+    // Eliminar producto del carrito
+    void eliminarProducto(string codigo) 
+    {
+        for (auto it = productosAnadidos.begin(); it != productosAnadidos.end(); ++it) {
+            if (it->getCodigo() == codigo) {
+                productosAnadidos.erase(it);
+                break;
+            }
+        }
     }
 
     // Getters
