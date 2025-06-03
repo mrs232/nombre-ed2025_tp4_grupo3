@@ -39,7 +39,6 @@ public:
     void setPrecio(float precio) { this->precio = precio; }
     void setCodigo(string codigo) { this->codigo = codigo; }
     void setStock(int stock) { this->stock = stock; }
-     virtual ~Producto() {} // Destructor virtual para uso con herencia
 
 };
 
